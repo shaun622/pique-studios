@@ -844,34 +844,17 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* Sticky scroll wrapper */
 .work-sticky-wrap {
   position: relative;
-  background-color: var(--soft-pink);
-}
-.work-sticky-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-pad);
-  align-items: center;
-}
-.work-sticky-bg {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 20px 0;
-}
-.work-sticky-img {
-  width: 100%;
-  background-color: transparent;
   background-size: contain;
   background-position: center right;
   background-repeat: no-repeat;
-  aspect-ratio: 4 / 3.5;
+  background-color: #fbf3ef;
 }
 .work-scroll-content {
   position: relative;
   z-index: 2;
-  padding: clamp(60px, 8vh, 100px) 0;
+  padding: clamp(100px, 14vh, 180px) var(--container-pad);
+  max-width: 480px;
+  margin-left: clamp(60px, 12vw, 240px);
 }
 .work-scroll-panel {
   text-align: center;
@@ -1123,7 +1106,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-bottom: 60px;
-  overflow: hidden;
 }
 .package-card {
   background: var(--ice-blue);
@@ -1539,17 +1521,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     gap: 16px;
   }
 
-  .work-sticky-inner {
-    grid-template-columns: 1fr;
-  }
-  .work-sticky-bg {
-    order: -1;
-    padding: 20px;
-  }
-  .work-sticky-img {
-    aspect-ratio: 4 / 3;
-    max-height: 50vh;
-  }
   .work-scroll-content {
     max-width: 100%;
     padding: 40px clamp(20px, 6vw, 80px);

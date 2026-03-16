@@ -194,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
       duration: 1,
       stagger: 0.2,
       ease: 'power2.out',
+      clearProps: 'transform',
       scrollTrigger: { trigger: '.packages-grid', start: 'top 80%' },
     });
 
