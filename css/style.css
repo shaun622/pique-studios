@@ -898,18 +898,18 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .work-subheading {
   font-family: var(--font-body);
-  font-size: 15.2px;
+  font-size: 17px;
   font-weight: 800;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  line-height: 1.8;
+  line-height: 1.4;
   color: var(--berry);
   margin-bottom: 16px;
 }
 .work-body {
   font-family: var(--font-body);
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.6;
   color: var(--berry);
   margin-bottom: 32px;
