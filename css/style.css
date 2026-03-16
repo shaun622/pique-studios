@@ -841,25 +841,51 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* ============================================
    SECTION 4 — FEATURED WORK
    ============================================ */
-.work {
+/* Sticky scroll wrapper */
+.work-sticky-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+.work-sticky-bg {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  grid-column: 1;
+  grid-row: 1;
+}
+.work-sticky-img {
+  width: 100%;
+  height: 100%;
   background-color: var(--soft-pink);
-  background-image: url('../assets/Homepage/Section 6 background (with graphic).png');
   background-size: cover;
   background-position: center;
-  overflow: hidden;
-  min-height: 100vh;
 }
-.work-inner {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: clamp(60px, 8vw, 120px) clamp(20px, 4vw, 80px);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+.work-scroll-content {
+  position: relative;
+  z-index: 2;
+  grid-column: 1;
+  grid-row: 1;
+  padding: 0 clamp(40px, 6vw, 120px);
+  max-width: 550px;
+  pointer-events: none;
 }
-.work-left {
-  max-width: 500px;
-  text-align: center;
+.work-scroll-panel {
+  text-align: left;
+  padding: 0;
+  pointer-events: auto;
+}
+.work-panel-intro {
+  padding-top: 28vh;
+  margin-bottom: 12vh;
+}
+.work-panel-detail {
+  margin-bottom: 12vh;
+}
+.work-panel-cta {
+  padding-bottom: 8vh;
 }
 .work-heading {
   font-family: var(--font-heading);
@@ -893,7 +919,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   height: 1px;
   background-color: var(--berry);
   opacity: 0.4;
-  margin: 0 auto 24px;
+  margin: 0 0 24px;
 }
 .work-micro {
   font-family: var(--font-body);
@@ -902,7 +928,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   color: var(--berry);
   margin-bottom: 32px;
 }
-.work-left .btn-services-berry {
+.work-scroll-panel .btn-services-berry {
   display: inline-block;
 }
 .btn-services-berry {
@@ -1503,6 +1529,37 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   .usp-bottom-top {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .work-sticky-wrap {
+    display: block;
+    height: auto;
+  }
+  .work-sticky-bg {
+    position: relative;
+    height: 60vh;
+  }
+  .work-scroll-content {
+    height: auto;
+    max-width: 100%;
+    padding: 40px clamp(20px, 6vw, 80px);
+    background-color: var(--soft-pink);
+  }
+  .work-panel-intro {
+    padding-top: 0;
+    margin-bottom: 24px;
+  }
+  .work-panel-detail {
+    margin-bottom: 24px;
+  }
+  .work-panel-cta {
+    padding-bottom: 0;
+  }
+  .work-scroll-panel {
+    text-align: center;
+  }
+  .work-divider {
+    margin: 0 auto 24px;
   }
 
   .process-steps {
