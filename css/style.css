@@ -500,6 +500,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   line-height: 0.8;
   margin-left: 0.12em;
 }
+.hero-line {
+  display: block;
+}
 .hero-subheadline {
   font-size: 1.15rem;
   line-height: 1.6;
@@ -537,88 +540,162 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* ============================================
    SECTION 2 — USP
    ============================================ */
+/* USP section */
 .usp {
-  padding: var(--section-pad) 0;
   background-color: var(--black);
   color: var(--cream);
   position: relative;
+  overflow: hidden;
 }
-.usp-layout {
+.usp-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: clamp(60px, 8vw, 120px) clamp(20px, 4vw, 80px);
+}
+
+/* Top row: heading left, body center */
+.usp-top {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 100px);
+  grid-template-columns: 1fr 1fr 0.5fr;
+  gap: 0;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 24px;
 }
-.usp .section-heading {
+.usp-heading {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: clamp(2.8rem, 5vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.08em;
   color: var(--cream);
 }
 .usp-body {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(251, 246, 242, 0.75);
-  margin-bottom: 32px;
+  font-family: var(--font-body);
+  font-size: 15.2px;
+  font-weight: 800;
+  line-height: 1.8;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--cream);
+  max-width: 480px;
 }
-.usp-bullets {
+
+/* Scattered image collage */
+.usp-collage {
+  position: relative;
+  width: 100%;
+  height: clamp(400px, 45vw, 600px);
   margin-bottom: 40px;
 }
-.usp-bullets li {
-  position: relative;
-  padding-left: 24px;
-  margin-bottom: 14px;
-  font-size: 1rem;
-  color: rgba(251, 246, 242, 0.85);
-}
-.usp-bullets li::before {
-  content: '';
+.usp-img {
   position: absolute;
-  left: 0;
-  top: 10px;
-  width: 8px;
-  height: 2px;
-  background: var(--berry);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
-.usp .btn-secondary {
+.usp-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Image 1: Cheri Cherry — bottom left */
+.usp-img-1 {
+  width: clamp(140px, 14vw, 220px);
+  height: clamp(200px, 20vw, 320px);
+  left: 2%;
+  bottom: 0;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+/* Image 2: Beauty portrait — left-center */
+.usp-img-2 {
+  width: clamp(160px, 16vw, 260px);
+  height: clamp(180px, 18vw, 280px);
+  left: 16%;
+  bottom: 18%;
+  transform: rotate(2deg);
+  z-index: 3;
+}
+/* Image 3: Iced coffee — center */
+.usp-img-3 {
+  width: clamp(140px, 14vw, 220px);
+  height: clamp(200px, 22vw, 340px);
+  left: 42%;
+  top: 10%;
+  transform: rotate(-1deg);
+  z-index: 2;
+}
+/* Image 4: Arlo skincare — center-right */
+.usp-img-4 {
+  width: clamp(160px, 16vw, 260px);
+  height: clamp(160px, 16vw, 240px);
+  right: 24%;
+  top: 10%;
+  transform: rotate(1.5deg);
+  z-index: 2;
+}
+/* Image 5: Ice cream beauty — far right, partially cropped */
+.usp-img-5 {
+  width: clamp(160px, 16vw, 260px);
+  height: clamp(200px, 20vw, 320px);
+  right: -3%;
+  top: 5%;
+  transform: rotate(3deg);
+  z-index: 1;
+}
+
+/* Bottom CTA row */
+.usp-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  margin-top: -160px;
+  margin-left: 35%;
+  z-index: 5;
+}
+.usp-bottom-top {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.btn-services {
+  display: inline-block;
+  background-color: var(--black);
   color: var(--cream);
-  border-color: var(--cream);
+  border: 2px solid var(--cream);
+  border-radius: 100px;
+  padding: 5px 32px;
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-smooth);
+  cursor: pointer;
+  white-space: nowrap;
 }
-.usp .btn-secondary:hover {
-  background: var(--cream);
+.btn-services:hover {
+  background-color: var(--cream);
   color: var(--black);
 }
-
-/* USP visual */
-.usp-image-collage {
-  position: relative;
-}
-.collage-frame-1 {
-  width: 100%;
-  aspect-ratio: 4/5;
-  overflow: hidden;
-}
-.collage-frame-1 .placeholder-image {
-  background: linear-gradient(160deg, var(--taupe) 0%, var(--berry) 100%);
-  min-height: 100%;
-}
-.collage-accent {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 120px;
-  height: 120px;
-  border: 2px solid var(--berry);
-  z-index: -1;
-}
-
-/* Statement line */
-.usp-statement {
+.usp-statement-heading {
   font-family: var(--font-heading);
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--cream);
+}
+.usp-statement-script {
+  font-family: var(--font-script);
+  font-size: clamp(2.5rem, 5vw, 5rem);
   font-weight: 400;
-  font-style: italic;
-  text-align: center;
-  color: rgba(251, 246, 242, 0.5);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
+  line-height: 1.2;
+  color: var(--cream);
 }
 
 
@@ -1147,13 +1224,20 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     opacity: 0.3;
   }
 
-  .usp-layout {
+  .usp-top {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
-  .usp-visual {
-    order: -1;
-    max-width: 400px;
-    margin: 0 auto;
+  .usp-collage {
+    height: 350px;
+  }
+  .usp-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .usp-statement {
+    flex-direction: column;
+    gap: 4px;
   }
 
   .proof::before {
@@ -1211,6 +1295,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
   .hero-heading {
     font-size: clamp(2.4rem, 10vw, 3.5rem);
+    text-align: center;
+  }
+  .hero-heading em {
+    font-size: clamp(3rem, 14vw, 5rem);
+    display: block;
+    margin-left: 0;
   }
   .hero-service-strip {
     flex-wrap: wrap;
