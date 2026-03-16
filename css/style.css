@@ -873,19 +873,19 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   pointer-events: none;
 }
 .work-scroll-panel {
-  text-align: left;
+  text-align: center;
   padding: 0;
   pointer-events: auto;
 }
 .work-panel-intro {
-  padding-top: 28vh;
-  margin-bottom: 12vh;
+  padding-top: 18vh;
+  margin-bottom: 3vh;
 }
 .work-panel-detail {
-  margin-bottom: 12vh;
+  margin-bottom: 3vh;
 }
 .work-panel-cta {
-  padding-bottom: 8vh;
+  padding-bottom: 4vh;
 }
 .work-heading {
   font-family: var(--font-heading);
@@ -919,7 +919,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   height: 1px;
   background-color: var(--berry);
   opacity: 0.4;
-  margin: 0 0 24px;
+  margin: 0 auto 24px;
 }
 .work-micro {
   font-family: var(--font-body);
