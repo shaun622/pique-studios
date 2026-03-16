@@ -844,33 +844,34 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* Sticky scroll wrapper */
 .work-sticky-wrap {
   position: relative;
+  background-color: var(--soft-pink);
+}
+.work-sticky-inner {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 1fr 1.2fr;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  align-items: center;
 }
 .work-sticky-bg {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
-  grid-column: 1;
-  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 0;
 }
 .work-sticky-img {
   width: 100%;
-  height: 100%;
-  background-color: var(--soft-pink);
-  background-size: cover;
-  background-position: center;
+  background-color: transparent;
+  background-size: contain;
+  background-position: center right;
+  background-repeat: no-repeat;
+  aspect-ratio: 4 / 3.5;
 }
 .work-scroll-content {
   position: relative;
   z-index: 2;
-  grid-column: 1;
-  grid-row: 1;
-  padding: 0 clamp(40px, 6vw, 120px);
-  max-width: 550px;
-  pointer-events: none;
+  padding: clamp(60px, 8vh, 100px) 0;
 }
 .work-scroll-panel {
   text-align: center;
@@ -878,23 +879,23 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   pointer-events: auto;
 }
 .work-panel-intro {
-  padding-top: 18vh;
-  margin-bottom: 3vh;
+  margin-bottom: 16px;
 }
 .work-panel-detail {
-  margin-bottom: 3vh;
+  margin-bottom: 16px;
 }
 .work-panel-cta {
-  padding-bottom: 4vh;
+  padding-top: 8px;
 }
 .work-heading {
   font-family: var(--font-heading);
   font-weight: 300;
-  font-size: clamp(2.8rem, 5vw, 72px);
+  font-size: clamp(2.8rem, 4.5vw, 64px);
   line-height: 1.02;
   letter-spacing: -0.08em;
   color: var(--berry);
   margin-bottom: 32px;
+  white-space: nowrap;
 }
 .work-subheading {
   font-family: var(--font-body);
@@ -1122,6 +1123,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-bottom: 60px;
+  overflow: hidden;
 }
 .package-card {
   background: var(--ice-blue);
@@ -1131,6 +1133,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transition: transform 0.3s var(--ease-smooth);
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 .package-card:hover {
   transform: translateY(-4px);
@@ -1535,32 +1539,23 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     gap: 16px;
   }
 
-  .work-sticky-wrap {
-    display: block;
-    height: auto;
+  .work-sticky-inner {
+    grid-template-columns: 1fr;
   }
   .work-sticky-bg {
-    position: relative;
-    height: 60vh;
+    order: -1;
+    padding: 20px;
+  }
+  .work-sticky-img {
+    aspect-ratio: 4 / 3;
+    max-height: 50vh;
   }
   .work-scroll-content {
-    height: auto;
     max-width: 100%;
     padding: 40px clamp(20px, 6vw, 80px);
-    background-color: var(--soft-pink);
   }
-  .work-panel-intro {
-    padding-top: 0;
-    margin-bottom: 24px;
-  }
-  .work-panel-detail {
-    margin-bottom: 24px;
-  }
-  .work-panel-cta {
-    padding-bottom: 0;
-  }
-  .work-scroll-panel {
-    text-align: center;
+  .work-heading {
+    white-space: normal;
   }
   .work-divider {
     margin: 0 auto 24px;

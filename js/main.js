@@ -163,42 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- Work Speaks (sticky scroll) ---
-    // Fade in text panels as user scrolls through the sticky section
-    gsap.from('.work-panel-intro', {
+    // --- Work Speaks ---
+    revealOnScroll('.work-scroll-content', { stagger: 0, y: 50 });
+    gsap.from('.work-sticky-img', {
       opacity: 0,
-      y: 60,
-      duration: 1.4,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.work-panel-intro',
-        start: 'top 80%',
-        toggleActions: 'play none none none',
-      },
-    });
-
-    gsap.from('.work-panel-detail', {
-      opacity: 0,
-      y: 50,
+      scale: 0.95,
       duration: 1.2,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.work-panel-detail',
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-      },
-    });
-
-    gsap.from('.work-panel-cta', {
-      opacity: 0,
-      y: 40,
-      duration: 1,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.work-panel-cta',
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-      },
+      scrollTrigger: { trigger: '.work-sticky-wrap', start: 'top 80%' },
     });
 
 
