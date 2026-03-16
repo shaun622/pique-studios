@@ -311,9 +311,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   background: var(--black);
 }
 .header-inner {
-  max-width: var(--container-max);
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 var(--container-pad);
+  padding: 0 clamp(20px, 4vw, 80px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -385,7 +385,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--cream);
+  background: var(--black);
   transition: all 0.3s var(--ease-smooth);
 }
 .mobile-menu-toggle.is-active .hamburger-line:nth-child(1) {
@@ -1205,6 +1205,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   .mobile-nav {
     display: block;
   }
+  /* Show black logo on mobile */
+  .logo-white { opacity: 0; }
+  .logo-black { opacity: 1; }
 
   .hero-heading {
     font-size: clamp(2.4rem, 10vw, 3.5rem);
