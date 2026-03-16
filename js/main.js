@@ -85,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const defaults = {
         y: 40,
         opacity: 0,
-        duration: 0.8,
+        duration: 1.2,
         ease: 'power2.out',
-        stagger: 0.15,
+        stagger: 0.2,
         start: 'top 85%',
       };
       const config = { ...defaults, ...options };
@@ -113,10 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const heroTl = gsap.timeline({ delay: 0.3 });
     heroTl
-      .to('.hero-heading', { opacity: 1, y: 0, duration: 1, ease: 'power2.out' })
-      .to('.hero-subheadline', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.5')
-      .to('.btn-enquire-hero', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
-      .to('.hero-service-strip span', { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out' }, '-=0.3');
+      .to('.hero-heading', { opacity: 1, y: 0, duration: 1.4, ease: 'power2.out' })
+      .to('.hero-subheadline', { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, '-=0.6')
+      .to('.btn-enquire-hero', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, '-=0.4')
+      .to('.hero-service-strip span', { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' }, '-=0.3');
 
 
     // --- USP section ---
@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
       opacity: 0,
       scale: 0.9,
       y: 30,
-      duration: 0.7,
-      stagger: 0.12,
+      duration: 1,
+      stagger: 0.18,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.usp-collage', start: 'top 80%' },
     });
@@ -146,8 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.proof-point', {
       opacity: 0,
       y: 25,
-      duration: 0.6,
-      stagger: 0.12,
+      duration: 0.9,
+      stagger: 0.18,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.proof-point', start: 'top 85%' },
     });
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.testimonial-band', {
       opacity: 0,
       y: 30,
-      duration: 0.8,
+      duration: 1.2,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.testimonial-band', start: 'top 85%' },
     });
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.work-panel-intro', {
       opacity: 0,
       y: 60,
-      duration: 1,
+      duration: 1.4,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.work-panel-intro',
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.work-panel-detail', {
       opacity: 0,
       y: 50,
-      duration: 0.8,
+      duration: 1.2,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.work-panel-detail',
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.work-panel-cta', {
       opacity: 0,
       y: 40,
-      duration: 0.7,
+      duration: 1,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.work-panel-cta',
@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.process-step', {
       opacity: 0,
       y: 50,
-      duration: 0.7,
-      stagger: 0.2,
+      duration: 1,
+      stagger: 0.25,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.process-steps', start: 'top 80%' },
     });
@@ -219,8 +219,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.package-card', {
       opacity: 0,
       y: 40,
-      duration: 0.6,
-      stagger: 0.12,
+      duration: 1,
+      stagger: 0.2,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.packages-grid', start: 'top 80%' },
     });
@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.image-band-item', {
       opacity: 0,
       scale: 0.95,
-      duration: 0.5,
-      stagger: 0.08,
+      duration: 0.8,
+      stagger: 0.12,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.image-band', start: 'top 85%' },
     });
@@ -242,8 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.faq-item', {
       opacity: 0,
       y: 20,
-      duration: 0.5,
-      stagger: 0.08,
+      duration: 0.8,
+      stagger: 0.12,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.faq-list', start: 'top 85%' },
     });
@@ -259,15 +259,15 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.footer-brand', {
       opacity: 0,
       y: 30,
-      duration: 0.7,
+      duration: 1,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.site-footer', start: 'top 90%' },
     });
     gsap.from('.footer-col', {
       opacity: 0,
       y: 25,
-      duration: 0.6,
-      stagger: 0.15,
+      duration: 0.9,
+      stagger: 0.2,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.footer-columns', start: 'top 90%' },
     });
