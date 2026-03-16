@@ -703,88 +703,87 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    SECTION 3 — PROOF
    ============================================ */
 .proof {
-  padding: var(--section-pad) 0;
-  background-color: var(--cream);
   position: relative;
-}
-.proof::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40%;
-  height: 100%;
+  overflow: hidden;
   background-color: var(--ice-blue);
-  z-index: 0;
+  background-image: url('../assets/Homepage/Section 4 background.png');
+  background-size: cover;
+  background-position: center;
 }
-.proof .container {
+.proof-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: clamp(60px, 8vw, 120px) clamp(20px, 4vw, 80px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+.proof-left {
   position: relative;
-  z-index: 1;
 }
-.proof-header {
-  max-width: 600px;
-  margin-bottom: 60px;
+.proof-laptop {
+  width: 100%;
+  max-width: 420px;
+  margin-left: 40px;
+}
+.proof-laptop img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 480px;
+  object-fit: contain;
+}
+.proof-heading {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: clamp(2.8rem, 5vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.08em;
+  color: var(--black);
+  margin-bottom: 24px;
 }
 .proof-intro {
+  font-family: var(--font-body);
   font-size: 1.1rem;
-  color: var(--taupe);
+  font-weight: 800;
   line-height: 1.7;
+  color: var(--black);
+  margin-bottom: 32px;
 }
-
 .proof-points {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px 60px;
-  margin-bottom: 48px;
+  list-style: none;
+  margin-bottom: 40px;
 }
 .proof-point {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-.proof-icon {
-  color: var(--berry);
-  font-size: 1.4rem;
-  line-height: 1.5;
-  flex-shrink: 0;
-}
-.proof-point p {
+  font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
+  color: var(--black);
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(22, 20, 20, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-
-.proof .btn-secondary {
-  margin-bottom: 80px;
+.proof-point:first-child {
+  border-top: 1px solid rgba(22, 20, 20, 0.15);
 }
-
-/* Testimonials */
-.testimonials {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-.testimonial {
-  background: var(--soft-pink);
-  padding: 48px 40px;
-  position: relative;
-}
-.testimonial p {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 24px;
+.proof-point::before {
+  content: '\2022';
+  flex-shrink: 0;
+  font-size: 1.2rem;
   color: var(--black);
 }
-.testimonial cite {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 500;
-  font-style: normal;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--berry);
+.btn-services-dark {
+  background-color: var(--black);
+  color: var(--cream);
+  border-color: var(--black);
+}
+.btn-services-dark:hover {
+  background-color: transparent;
+  color: var(--black);
+  border-color: var(--black);
 }
 
 
@@ -1240,14 +1239,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     gap: 4px;
   }
 
-  .proof::before {
-    display: none;
-  }
-  .proof-points {
+  .proof-inner {
     grid-template-columns: 1fr;
   }
-  .testimonials {
-    grid-template-columns: 1fr;
+  .proof-laptop {
+    max-width: 400px;
   }
 
   .work-grid {
