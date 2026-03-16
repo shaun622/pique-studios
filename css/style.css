@@ -518,7 +518,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   left: 0;
   right: 0;
   z-index: 4;
-  background-color: var(--berry);
+  background-color: var(--soft-pink);
   display: flex;
   justify-content: center;
   align-items: center;
